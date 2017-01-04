@@ -1,0 +1,30 @@
+{
+  "name": "mk-read-text-file",
+  "version": "0.0.1",
+  "description": "node fs.writeFile as promise",
+  "main": "index.js",
+  "scripts": {
+    "test": "node --harmony test/*.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mkastner/read-text-file.js.git"
+  },
+  "keywords": [
+    "node",
+    "text",
+    "file",
+    "write",
+    "promise"
+  ],
+  "author": "John Galt",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mkastner/read-text-file.js/issues"
+  },
+  "homepage": "https://github.com/mkastner/read-text-file.js#readme",
+  "devDependencies": {
+    "mk-write-text-file": "git+https://github.com/mkastner/mk-write-text-file.git",
+    "tape": "^4.6.3"
+  }
+}

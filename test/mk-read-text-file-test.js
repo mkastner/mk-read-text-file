@@ -3,20 +3,17 @@
 const   tape = require('tape'),
         fs = require('fs'),
         path = require('path'),
-        writeFile = require('mk-write-text-file'),
-        deleteFile = require('mk-delete-file'),
-        testText = "test text";
+        readFile = require('../index');
 
-tape('mk write text file', function(t) {
+tape('mk read text file', function(t) {
+
+    t.plan(1);
 
     async function run() {
-
-        await writeFile('mk-write-text-file');
-
-        t.plan(1);
-
+        let filePath = path.join(path.resolve('./'), 'test/playground/testfile.txt');
+        let fileText = await readFile(filePath);
+        t.equal(fileText.trim(), 'Testfile text');
         t.end();
-
     }
 
     run();

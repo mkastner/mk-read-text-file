@@ -4,7 +4,7 @@
   "description": "node fs.writeFile as promise",
   "main": "index.js",
   "scripts": {
-    "test": "node --harmony test/*.js"
+    "test": "NODE_ENV=test node --harmony test/*.js"
   },
   "repository": {
     "type": "git",
@@ -24,7 +24,7 @@
   },
   "homepage": "https://github.com/mkastner/read-text-file.js#readme",
   "devDependencies": {
-    "mk-write-text-file": "git+https://github.com/mkastner/mk-write-text-file.git",
+    "mk-log": "git+https://github.com/mkastner/mk-log.git",
     "tape": "^4.6.3"
   }
 }

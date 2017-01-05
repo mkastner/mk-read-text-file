@@ -7,12 +7,13 @@ const   tape = require('tape'),
 
 tape('mk read text file', function(t) {
 
-    t.plan(1);
+    t.plan(2);
 
     async function run() {
         let filePath = path.join(path.resolve('./'), 'test/playground/testfile.txt');
-        let fileText = await readFile(filePath);
-        t.equal(fileText.trim(), 'Testfile text');
+        let result = await readFile(filePath);
+        t.equal('success', result.status);
+        t.equal('Testfile text', result.text.trim());
         t.end();
     }
 

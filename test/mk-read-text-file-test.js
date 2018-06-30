@@ -1,24 +1,27 @@
-/* jslint node: true, strict:implied, esversion: 6 */
+const tape = require('tape');
+const path = require('path');
+const readFile = require('../index');
 
-const   tape = require('tape'),
-        fs = require('fs'),
-        path = require('path'),
-        readFile = require('../index');
+async function main() {
 
-tape('mk read text file', function(t) {
+  tape('mk read text file', async function(t) {
 
-    t.plan(2);
+    try {
 
-    async function run() {
-        let filePath = path.join(path.resolve('./'), 'test/playground/testfile.txt');
-        let result = await readFile(filePath);
-        t.equal('success', result.status);
-        t.equal('Testfile text', result.text.trim());
-        t.end();
+      t.plan(2);
+
+      let filePath = path.join(path.resolve('./'), 'test/playground/testfile.txt');
+      let data = await readFile(filePath);
+      t.ok(data, 'data should be read');
+      t.equal('Testfile text', data.trim());
+      t.end();
+
+    } catch (err) {
+      
+      console.error(err);
     }
+  });
 
-    run();
+}
 
-
-
-});
+main();
